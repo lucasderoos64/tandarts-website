@@ -48,51 +48,32 @@
           </section>
 
           <section class="card">
-            <div class="calendar-header">
-              <button class="icon-button" type="button" aria-label="Vorige maand">&lt;</button>
-              <div>
-                <h2>3. Kies een dag</h2>
-                <p>Juni 2026</p>
+            <div class="calendar-shell">
+              <div class="calendar-header">
+                <button class="icon-button" type="button" aria-label="Vorige maand" id="prev-month">&lt;</button>
+                <div>
+                  <h2>3. Kies een dag</h2>
+                  <p id="current-month-label">Juni 2026</p>
+                </div>
+                <button class="icon-button" type="button" aria-label="Volgende maand" id="next-month">&gt;</button>
               </div>
-              <button class="icon-button" type="button" aria-label="Volgende maand">&gt;</button>
+              <div class="month-tabs" aria-label="Maand kiezen">
+                <button class="month-tab active" type="button" data-month-index="0">Jan</button>
+                <button class="month-tab" type="button" data-month-index="1">Feb</button>
+                <button class="month-tab" type="button" data-month-index="2">Mrt</button>
+                <button class="month-tab" type="button" data-month-index="3">Apr</button>
+                <button class="month-tab" type="button" data-month-index="4">Mei</button>
+                <button class="month-tab" type="button" data-month-index="5">Jun</button>
+                <button class="month-tab" type="button" data-month-index="6">Jul</button>
+                <button class="month-tab" type="button" data-month-index="7">Aug</button>
+                <button class="month-tab" type="button" data-month-index="8">Sep</button>
+                <button class="month-tab" type="button" data-month-index="9">Okt</button>
+                <button class="month-tab" type="button" data-month-index="10">Nov</button>
+                <button class="month-tab" type="button" data-month-index="11">Dec</button>
+              </div>
             </div>
-            <div class="month-calendar" aria-label="Kalender juni 2026">
+            <div class="month-calendar" aria-label="Kalender juni 2026" id="appointment-calendar">
               <span>Ma</span><span>Di</span><span>Wo</span><span>Do</span><span>Vr</span><span>Za</span><span>Zo</span>
-              <button class="calendar-cell" type="button" data-day="1" data-time="09:00">1<small>09:00</small></button>
-              <button class="calendar-cell" type="button" data-day="2" data-time="09:00">2<small>09:00</small></button>
-              <button class="calendar-cell selected" type="button" data-day="3" data-time="10:30">3<small>10:30</small></button>
-              <button class="calendar-cell" type="button" data-day="4" data-time="13:00">4<small>13:00</small></button>
-              <button class="calendar-cell" type="button" data-day="5" data-time="11:00">5<small>11:00</small></button>
-              <button class="calendar-cell weekend full" type="button" disabled data-day="6">6<small>Vol</small></button>
-              <button class="calendar-cell weekend full" type="button" disabled data-day="7">7<small>Vol</small></button>
-              <button class="calendar-cell" type="button" data-day="8" data-time="14:00">8<small>14:00</small></button>
-              <button class="calendar-cell" type="button" data-day="9" data-time="09:30">9<small>09:30</small></button>
-              <button class="calendar-cell request" type="button" data-day="10" data-time="Op aanvraag">10<small>Op aanvraag</small></button>
-              <button class="calendar-cell" type="button" data-day="11" data-time="15:30">11<small>15:30</small></button>
-              <button class="calendar-cell" type="button" data-day="12" data-time="10:00">12<small>10:00</small></button>
-              <button class="calendar-cell weekend full" type="button" disabled data-day="13">13<small>Vol</small></button>
-              <button class="calendar-cell weekend full" type="button" disabled data-day="14">14<small>Vol</small></button>
-              <button class="calendar-cell" type="button" data-day="15" data-time="08:30">15<small>08:30</small></button>
-              <button class="calendar-cell" type="button" data-day="16" data-time="13:00">16<small>13:00</small></button>
-              <button class="calendar-cell" type="button" data-day="17" data-time="16:00">17<small>16:00</small></button>
-              <button class="calendar-cell" type="button" data-day="18" data-time="09:00">18<small>09:00</small></button>
-              <button class="calendar-cell" type="button" data-day="19" data-time="11:30">19<small>11:30</small></button>
-              <button class="calendar-cell weekend full" type="button" disabled data-day="20">20<small>Vol</small></button>
-              <button class="calendar-cell weekend full" type="button" disabled data-day="21">21<small>Vol</small></button>
-              <button class="calendar-cell" type="button" data-day="22" data-time="14:30">22<small>14:30</small></button>
-              <button class="calendar-cell" type="button" data-day="23" data-time="09:00">23<small>09:00</small></button>
-              <button class="calendar-cell request" type="button" data-day="24" data-time="Op aanvraag">24<small>Op aanvraag</small></button>
-              <button class="calendar-cell" type="button" data-day="25" data-time="10:30">25<small>10:30</small></button>
-              <button class="calendar-cell" type="button" data-day="26" data-time="15:00">26<small>15:00</small></button>
-              <button class="calendar-cell weekend full" type="button" disabled data-day="27">27<small>Vol</small></button>
-              <button class="calendar-cell weekend full" type="button" disabled data-day="28">28<small>Vol</small></button>
-              <button class="calendar-cell" type="button" data-day="29" data-time="08:30">29<small>08:30</small></button>
-              <button class="calendar-cell" type="button" data-day="30" data-time="13:30">30<small>13:30</small></button>
-              <button class="calendar-cell empty" type="button" aria-hidden="true"></button>
-              <button class="calendar-cell empty" type="button" aria-hidden="true"></button>
-              <button class="calendar-cell empty" type="button" aria-hidden="true"></button>
-              <button class="calendar-cell empty" type="button" aria-hidden="true"></button>
-              <button class="calendar-cell empty" type="button" aria-hidden="true"></button>
             </div>
             <p class="selected-slot" id="selected-slot">Geselecteerd: woensdag 3 juni om 10:30</p>
           </section>

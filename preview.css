@@ -234,11 +234,17 @@ section { padding: clamp(54px, 7vw, 98px) clamp(18px, 4vw, 56px); }
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 18px;
 }
+.calendar-shell {
+  margin: 0 auto 20px;
+  max-width: 860px;
+}
 .calendar-header {
   align-items: center;
   display: flex;
   gap: 18px;
   justify-content: space-between;
+  margin-bottom: 16px;
+  text-align: center;
 }
 .calendar-header p {
   color: var(--muted);
@@ -255,6 +261,30 @@ section { padding: clamp(54px, 7vw, 98px) clamp(18px, 4vw, 56px); }
   height: 44px;
   justify-content: center;
   width: 44px;
+}
+.month-tabs {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(12, minmax(48px, 1fr));
+  justify-content: center;
+  margin: 0 0 16px;
+  padding-bottom: 4px;
+}
+.month-tab {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  font-weight: 800;
+  min-height: 38px;
+  padding: 8px 10px;
+  text-align: center;
+}
+.month-tab.active {
+  background: var(--mint);
+  border-color: var(--mint);
+  color: white;
 }
 .month-calendar {
   display: grid;
@@ -319,7 +349,7 @@ section { padding: clamp(54px, 7vw, 98px) clamp(18px, 4vw, 56px); }
   border-radius: 8px;
   color: var(--ink);
   font-weight: 800;
-  margin: 18px 0 0;
+  margin: 14px 0 0;
   padding: 12px 14px;
 }
 .button-confirmed {
@@ -359,6 +389,11 @@ section { padding: clamp(54px, 7vw, 98px) clamp(18px, 4vw, 56px); }
   gap: 6px;
 }
 .form-grid .full { grid-column: 1 / -1; }
+.form-grid + .button,
+.form-grid + .button + .button,
+.form-grid ~ .button {
+  margin-top: 22px;
+}
 input, select, textarea {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -560,12 +595,24 @@ footer a { color: rgba(255,255,255,.86); }
   .hero, .grid-3, .grid-2, .quick-actions, .portal-preview, footer, .team-feature, .team-card, .choice-grid, .calendar-grid, .form-grid, .auth-section { grid-template-columns: 1fr; }
   .trust { grid-template-columns: repeat(2, 1fr); }
   .team-card div { padding: 0 22px 22px; }
+  .month-tabs {
+    grid-template-columns: repeat(6, minmax(48px, 1fr));
+  }
 }
 @media (max-width: 560px) {
   body { padding-bottom: 72px; }
   .trust { grid-template-columns: 1fr; }
   .button { justify-content: center; width: 100%; }
   .month-calendar { gap: 5px; }
+  .calendar-header {
+    gap: 10px;
+  }
+  .calendar-header h2 {
+    font-size: clamp(1.7rem, 8vw, 2.3rem);
+  }
+  .month-tabs {
+    grid-template-columns: repeat(4, minmax(48px, 1fr));
+  }
   .calendar-cell { padding: 7px; }
   .calendar-cell small { font-size: .62rem; }
   .mobile-actionbar {
